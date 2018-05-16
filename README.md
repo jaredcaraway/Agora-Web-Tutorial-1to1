@@ -73,8 +73,8 @@ The SDK must be integrated into the sample project before it can run.
 - [Create and Manage a Stream](#create-and-manage-a-stream)
 - [Add Client Event Listeners](#add-client-event-listeners)
 - [Leave a Channel](#leave-a-channel)
-- [Publish/Unpublish a Stream](#publish/unpublish-a-stream)
-- [Enable/Disable Audio and Video](#enable/disable-audio-and-video)
+- [Publish/Unpublish a Stream](#publish-and-unpublish-a-stream)
+- [Enable/Disable Audio and Video](#enable-and-disable-audio-and-video)
 
 ### Check AgoraRTC and System Requirements
 
@@ -434,7 +434,7 @@ function leave() {
 
 ```
 
-### Publish/Unpublish a Stream
+### Publish and Unpublish a Stream
 
 - [Publish a Stream](#publish-a-stream)
 - [Unpublish a Stream](#unpublish-a-stream)
@@ -473,14 +473,14 @@ function unpublish() {
 ```
 
 
-### Enable/Disable Audio and Video
+### Enable and Disable Audio and Video
 
-- [Enable / Disable Audio](#enable-/-disable-audio)
-- [Enable / Disable Video](#enable-/-disable-video)
+- [Enable and Disable Audio](#enable-and-disable-audio)
+- [Enable and Disable Video](#enable-and-disable-video)
 
 For this section, run the `cdn.html` sample file. Make sure to apply the same instructions from the **File updates** section to the `cdn.html` file.
 
-#### Enable / Disable Audio
+#### Enable and Disable Audio
 
 For each connected stream, the Agora API can enable or disable audio.
 
@@ -500,7 +500,7 @@ function disableAudio() {
 }
 ```
 
-#### Enable / Disable Video
+#### Enable and Disable Video
 
 For each connected stream, the Agora API can enable or disable video.
 
