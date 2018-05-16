@@ -234,7 +234,7 @@ Once this method is called successfully, the SDK triggers the callbacks.
 
 #### Host a Stream
 
-Once joining, if the user will act as the *host* for the stream, the app must create a stream. For the sample app, it checks if the `Host` UI checkbox is checked. This check is applied within the `onSuccess` callback of the [`client.join()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method.
+If a user who has joined the stream will act as the *host*, the app must create a stream. For the sample app, it checks if the `Host` UI checkbox is checked. This check is applied within the `onSuccess` callback of the [`client.join()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method.
 
 ``` JavaScript
       if (document.getElementById("video").checked) {
@@ -246,16 +246,16 @@ Once joining, if the user will act as the *host* for the stream, the app must cr
 
 If the user is a host, start the stream using the [`AgoraRTC.createStream()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method. The sample app passes in an object with the following properties:
 
-- **streamID**: The stream ID. Normally the stream ID is set as the uid, which can be retrieved from the `client.join()` callback.
+- **streamID**: The stream ID. Normally the stream ID is set as the user ID, which can be retrieved from the `client.join()` callback.
 - **audio**: Indicates if this stream contains an audio track.
 - **video**: Indicates if this stream contains a video track.
 - **screen**: Indicates if this stream contains a screen sharing track. Currently screen sharing is only supported by the Google Chrome Explorer.
 - **cameraId**: (*Optional*) The camera device ID retrieved from the getDevices method. 
 - **microphoneId**: (*Optional*) The microphone device ID retrieved from the getDevices method.
 
-The `createStream` object is set up for additional optional attributes. Refer to the [Agora API documentation](https://docs.agora.io/en/) for more details.
+The `createStream` object is set up for additional optional attributes. See the [Agora API documentation](https://docs.agora.io/en/) for more information.
 
-The sample app passes in the callback's user ID `uid` as the streamID, enables audio, uses the selected audio and video devices from the dropdowns, enables video for the host only, and disables screen sharing.
+The sample app passes in the callback's user ID (`uid`) as the stream ID, enables audio, uses the selected audio and video devices from the dropdowns, enables video for the host only, and disables screen sharing:
 
 ``` JavaScript
         camera = videoSource.value;
@@ -272,7 +272,7 @@ The sample app passes in the callback's user ID `uid` as the streamID, enables a
 ```
 #### Set the Stream Video Profile
 
-If the user is a host, the video profile must be set. The sample app sets the video profile to `720p_3`, which means a Resolution of 1280x720, Frame Rate (fps) of 30, and a Bitrate (kbps) of 1710. Refer to the [Agora API documentation](https://docs.agora.io/en/) for additional video profile options.
+If the user is a host, the video profile must be set. The sample app sets the video profile to `720p_3`, which represents a resolution of 1280x720, frame rate (fps) of 30, and a bitrate (kbps) of 1710. See the [Agora API documentation](https://docs.agora.io/en/) for additional video profile options.
 
 ``` JavaScript
         if (document.getElementById("video").checked) {
@@ -282,7 +282,7 @@ If the user is a host, the video profile must be set. The sample app sets the vi
 
 #### Set the Stream Event Listeners for Camera and Microphone Access
 
-Once the stream has been set up and configured, the sample app adds event listeners using the method [`localStream.on()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api), to check for the user's microphone and camera permissions. These event listeners are used for debugging and/or to send alerts to request permissions. The sample app uses console logs to check if access to the camera and microphone was allowed or denied by the user.
+Once the stream has been set up and configured, the sample app adds event listeners using the [`localStream.on()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method to check for the user's microphone and camera permissions. These event listeners are used for debugging and to send alerts to request permissions. The sample app uses console logs to check if access to the camera and microphone was allowed or denied by the user.
 
 
 ``` JavaScript
@@ -324,11 +324,11 @@ Next, the sample app initializes the stream by calling the [`localStream.init()`
 - [Remove a Stream from the Client](#remove-a-stream-from-the-client)
 - [Remove a Peer from the Client](#remove-a-peer-from-the-client)
 
-Adding listeners to the broadcast client is helpful for debugging, and to help manage streams. The sample app has event listeners for error messages, stream add/subscribe/remove, and peer leaves.
+You can add listeners to the broadcast client to help you with debugging and managing streams. The sample app has event listeners for error messages, stream operations, and peer removal.
 
 #### Setup Client Error Handling
 
-Passing `error` into the [`client.on()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method will return the error type `err.reason`. The sample app uses this error type for debugging and re-invoke methods that failed.
+Passing `error` into the [`client.on()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method will return the error type `err.reason`. The sample app uses this error type for debugging and re-invoking methods that failed.
 
 Since the Channel Key has an expiration, the sample app checks for the error `DYNAMIC_KET_TIMEOUT` in the `onFailure` callback. It then renews the channel key using the `client.renewChannelKey()` method.
 
@@ -462,7 +462,7 @@ function publish() {
 
 The sample app applies the JavaScript function `unpublish()` to the `Unpublish` UI button.
 
-Similar to `client.publish()`, the [`client.unpublish()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method unpublishes the local stream from the server. Again, the sample app passes in the stream object and using the `onFailure` callback to check for errors during the publishing process. 
+Similar to `client.publish()`, the [`client.unpublish()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method unpublishes the local stream from the server. The sample app passes in the stream object and uses the `onFailure` callback to check for errors during the publishing process. 
 
 ``` JavaScript
 function unpublish() {
@@ -486,7 +486,7 @@ For this section, run the `cdn.html` sample file. Make sure to apply the same in
 
 For each connected stream, the [Agora API](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) can enable or disable audio.
 
-To enable audio, call the [`enableAudio()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method on the stream. The sample app applies the `enableAudio()` method on the `Enable Audio` UI button, to call enable audio on the open `localStream`.
+To enable audio, call the [`enableAudio()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method on the stream. The sample app applies the `enableAudio()` method on the `Enable Audio` UI button to enable audio on the open `localStream`.
 
 ``` JavaScript
 function enableAudio() {
@@ -494,7 +494,7 @@ function enableAudio() {
 }
 ```
 
-Disabling audio is exactly the same, but using the [`disableAudio()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method. The sample app, uses the `disableAudio()` method applied to the `Disable Audio` UI button.
+Disabling audio is exactly the same, but requires the [`disableAudio()`](https://docs.agora.io/en/2.2/product/Voice/API%20Reference/communication_web_audio#voice-call-api) method. The sample app uses the `disableAudio()` method applied to the `Disable Audio` UI button.
 
 ``` JavaScript
 function disableAudio() {
@@ -523,7 +523,7 @@ function disableVideo() {
 ```
 
 ## Resources
-* You can find full API documentation at the [Document Center](https://docs.agora.io/en/).
+* Complete API documentation is available at the [Document Center](https://docs.agora.io/en/).
 * You can file bugs about this sample [here](https://github.com/AgoraIO/Agora-Web-Tutorial-1to1/issues).
 
 
