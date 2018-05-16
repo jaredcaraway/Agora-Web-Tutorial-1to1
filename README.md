@@ -1,5 +1,5 @@
 
-# Agora Tutorial for Web on PC - 1to1
+# Agora 1-to-1 Tutorial for Web
 
 This tutorial enables you to quickly get started with creating an Agora account, downloading the SDK, and using the Agora sample app to give you an overview on how to develop requests to the API, such as:
 
