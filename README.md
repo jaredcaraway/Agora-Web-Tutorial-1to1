@@ -232,7 +232,7 @@ Once the client initialization (`client.init()`) is complete, the SDK's (`client
 
 #### Host a Stream
 
-Once joining, if the user is going to act as the "host" for the stream, the app needs to create a stream. For the sample app, it checks if the `Host` UI checkbox is checked. This check is applied within the API's (`join()`) method, `onSuccess` callback.
+Once joining, if the user will act as the *host* for the stream, the app must create a stream. For the sample app, it checks if the `Host` UI checkbox is checked. This check is applied within the API's (`join()`) method, `onSuccess` callback.
 
 ``` JavaScript
       if (document.getElementById("video").checked) {
