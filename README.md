@@ -230,7 +230,7 @@ Once this method is called successfully, the SDK triggers the callbacks.
 - [Host a Stream](#host-a-stream)
 - [Create a Stream](#create-a-stream)
 - [Set the Stream Video Profile](#set-the-stream-video-profile)
-- [Set the Stream Event Listeners for Camera and Microphone Access](#set-a-stream's-event-listeners-for-camera-and-microphone-access)
+- [Set the Stream Event Listeners for Camera and Microphone Access](#set-the-stream-event-listeners-for-camera-and-microphone-access)
 
 #### Host a Stream
 
