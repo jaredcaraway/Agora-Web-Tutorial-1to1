@@ -186,7 +186,7 @@ Specifically:
 
 #### Initialize the Client
 
-Once the client has been created, it needs to be initialized with the app ID. In the sample app, this is the UI text field labeled `Key`. 
+Once the client has been created, it must be initialized with the app ID. In the sample app, this is the UI text field labeled `Key`. 
 
 ``` JavaScript
   client.init(key.value, function () {
@@ -245,11 +245,11 @@ Once joining, if the user will act as the *host* for the stream, the app must cr
 If the user is a host, start the stream using the (`createStream()`) API method. The sample app passes in an object with the following properties:
 
 - **streamID**: The stream ID. Normally the stream ID is set as the uid, which can be retrieved from the (`client.join()`) callback.
-- **audio**: True/False. Indicates if this stream contains an audio track.
-- **video**: True/False. Indicates if this stream contains a video track.
-- **screen**: True/False. Indicates if this stream contains a screen sharing track. Currently screen sharing is only supported by the Google Chrome Explorer.
-- **cameraId**: The camera device ID retrieved from the getDevices method. (optional)
-- **microphoneId**: The microphone device ID retrieved from the getDevices method. (optional)
+- **audio**: Indicates if this stream contains an audio track.
+- **video**: Indicates if this stream contains a video track.
+- **screen**: Indicates if this stream contains a screen sharing track. Currently screen sharing is only supported by the Google Chrome Explorer.
+- **cameraId**: (*Optional*) The camera device ID retrieved from the getDevices method. 
+- **microphoneId**: (*Optional*) The microphone device ID retrieved from the getDevices method.
 
 The `createStream` object is set up for additional optional attributes. Refer to the [Agora API documentation](https://docs.agora.io/en/) for more details.
 
@@ -264,7 +264,7 @@ The sample app passes in the callback's user ID `uid` as the streamID, enables a
 ```
 #### Set a Stream's Video Profile
 
-If the user is a host, the video profile needs to be set. The sample app sets the video profile to `720p_3`, which means a Resolution of 1280x720, Frame Rate (fps) of 30, and a Bitrate (kbps) of 1710. Refer to the [Agora API documentation](https://docs.agora.io/en/) for additional video profile options.
+If the user is a host, the video profile must be set. The sample app sets the video profile to `720p_3`, which means a Resolution of 1280x720, Frame Rate (fps) of 30, and a Bitrate (kbps) of 1710. Refer to the [Agora API documentation](https://docs.agora.io/en/) for additional video profile options.
 
 ``` JavaScript
         if (document.getElementById("video").checked) {
