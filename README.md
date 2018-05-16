@@ -259,7 +259,13 @@ The sample app passes in the callback's user ID `uid` as the streamID, enables a
         camera = videoSource.value;
         microphone = audioSource.value;
         
-        localStream = AgoraRTC.createStream({streamID: uid, audio: true, cameraId: camera, microphoneId: microphone, video: document.getElementById("video").checked, screen: false});
+        localStream = AgoraRTC.createStream({
+          streamID: uid, 
+          audio: true, 
+          cameraId: camera, 
+          microphoneId: microphone, 
+          video: document.getElementById("video").checked, 
+          screen: false});
         
 ```
 #### Set a Stream's Video Profile
