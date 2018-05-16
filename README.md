@@ -67,8 +67,8 @@ The SDK must be integrated into the sample project before it can run.
 
 ## Steps to Create the Sample
 
-- [AgoraRTC and System Requirements](#agorartc-and-system-requirements)
-- [App Initialization and Logging](#app-initialization-and-logging)
+- [Check AgoraRTC and System Requirements](#agorartc-and-system-requirements)
+- [Setup App Initialization and Logging](#app-initialization-and-logging)
 - [Create the Client and Join a Channel Session](#create-the-client-and-join-a-channel-session)
 - [Create and Manage a Stream](#create-and-manage-a-stream)
 - [Add Client Event Listeners](#add-client-event-listeners)
@@ -76,7 +76,7 @@ The SDK must be integrated into the sample project before it can run.
 - [Publish/Unpublish a Stream](#publish/unpublish-a-stream)
 - [Enable/Disable Audio and Video](#enable/disable-audio-and-video)
 
-### AgoraRTC and System Requirements
+### Check AgoraRTC and System Requirements
 
 `AgoraRTC` is the base JavaScript class of Agora Web SDK, which enables the use of Agora Web SDK's communication functionality. 
 
@@ -88,7 +88,7 @@ if(!AgoraRTC.checkSystemRequirements()) {
 }
 ```
 
-### App Initialization and Logging
+### Setup App Initialization and Logging
 
 - [Initialize Variables](#initialize-variables)
 - [Initialize Audio and Video Devices](#initialize-audio-and-video-devices)
