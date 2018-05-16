@@ -112,7 +112,7 @@ var videoSelect = document.querySelector('select#videoSource');
 
 #### Initialize Audio and Video Devices
 
-At the bottom of the `index.html` file you'll see the (`getDevices()`) method. This method loads all the available browser-enabled audio and video connections, into the `audio source` and `video source` dropdown menus.
+The `index.html` file contains a`getDevices()` method. This method loads all the available browser-enabled audio and video connections, into the `audio source` and `video source` dropdown menus.
 
 ``` JavaScript
 // function to find and load browser-enabled audio and video devices
@@ -143,7 +143,7 @@ getDevices();
 
 #### Agora Logging
 
-To use logging, call it with `AgoraRTC.Logger`. The sample app shows examples of `error`, `warning`, `info`, and `debug` logging.
+To use logging, invoke methods from `AgoraRTC.Logger`. The sample app shows examples of `error`, `warning`, `info`, and `debug` logging.
 
 ``` JavaScript
 /* simulated data to proof setLogLevel() */
@@ -265,8 +265,8 @@ The sample app passes in the callback's user ID `uid` as the streamID, enables a
           cameraId: camera, 
           microphoneId: microphone, 
           video: document.getElementById("video").checked, 
-          screen: false});
-        
+          screen: false}
+        );
 ```
 #### Set a Stream's Video Profile
 
@@ -278,7 +278,7 @@ If the user is a host, the video profile must be set. The sample app sets the vi
         }
 ```
 
-#### Set a Stream's Event Listeners for Camera/Mic Access
+#### Set a Stream's Event Listeners for Camera/Microphone Access
 
 Once the stream has been set up and configured, the sample app adds event listeners using the API method (`localStream.on()`), to check for the user's microphone and camera permissions. These event listeners are used for debugging and/or to send alerts to request permissions. The sample app uses console logs to check if access to the camera and microphone was allowed or denied by the user.
 
